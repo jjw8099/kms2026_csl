@@ -72,8 +72,8 @@ figure .ph{background:var(--paper);border:1px solid var(--line);padding:8px}
 figure img{display:block;width:100%;height:auto}
 figcaption{font-size:14.5px;color:var(--sub);min-width:0}
 figure.stack{grid-template-columns:1fr;gap:16px}
-.plain{background:var(--paper);border-left:3px solid var(--ink);padding:12px 16px;margin:4px 0 2px;color:var(--ink);font-size:15px;line-height:1.7}
-.plain b{color:var(--ink)}
+.plain{display:block;background:var(--paper);border-left:3px solid var(--ink);padding:12px 16px;margin:4px 0 2px;color:var(--ink);font-size:15px;line-height:1.7}
+.plain b{display:inline;font-size:inherit;margin:0;color:var(--ink)}
 figcaption b{display:block;color:var(--ink);font-weight:800;font-size:17px;letter-spacing:-.02em;margin-bottom:8px;line-height:1.4}
 figcaption .tags{margin:0 0 10px}
 h3{margin:44px 0 14px;font:800 19px var(--sans);letter-spacing:-.02em}
@@ -123,7 +123,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div class="eyebrow">Poster supplement</div>
       <h1>환경 조건과 식생 유형에 따른<br>관측 및 모델 증발산 반응 관계 비교</h1>
       <p class="authors">김정우<sup>1,3</sup> · 김동민<sup>2</sup> · 김진수<sup>1</sup><br><span class="aff"><sup>1</sup>KAIST 건설및환경공학과 · <sup>2</sup>KAIST AX학과 · <sup>3</sup>서울대학교 기후변화연구센터</span></p>
-      <p>CESM2 격자 입력으로 타워 관측 증발산을 학습한 머신러닝 함수는 CESM2보다 관측에 가까운 증발산을 냈습니다. 오차는 각 건조도 구간에서 사이트의 61–76%에서 줄었습니다. 감소 폭은 건조도보다 식생 유형에 따라 달랐고, 습지와 낙엽활엽수림에서 가장 컸습니다. 개선은 주로 사이트 간 차이와 계절 순환에서 나타났습니다. 전구로 확장한 증발산은 X-BASE·GLEAM과 비슷한 공간 분포를 보였습니다. 학습된 함수는 복사·기온·GPP에 주로 기댔고, 그 정도는 식생마다 달랐습니다. 이 보조자료에는 포스터에 담지 못한 방법과 추가 그림을 정리했습니다.</p>
+      <p><b>관측·모델 ET 반응 관계와 예측 성능은 어떻게 다른가?</b> 증발산(evapotranspiration, ET)은 지면의 물·에너지 수지를 잇는 과정이지만, 지구시스템모델의 ET는 관측과 차이를 보입니다. 동일한 CESM2 입력으로 플럭스 타워 ET를 학습한 기계학습(machine learning, ML)은 CESM2보다 타워 ET 오차가 작았고, 개선은 모든 건조도 군에서 주로 사이트 간 차이와 계절 순환에서 나타났습니다. 같은 입력에서 CESM2 ET로 학습한 관계는 GPP에, 관측 ET로 학습한 관계는 기온·복사에 더 의존했습니다. 이 보조자료에는 포스터에 담지 못한 방법과 추가 그림을 정리했습니다.</p>
     </div>
     <div class="pic"><img src="fig/cover_map.png" alt="ML로 산출한 전구 격자 증발산 지도, 2001–2014 평균"><p class="piccap">ML이 산출한 전구 격자 증발산 (2001–2014 평균)</p></div>
   </div>
@@ -133,7 +133,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <button class="card" data-go="perf"><div class="ph"><img src="fig/p1.jpg" alt="식생별 RMSE와 사이트별 판정"></div><span class="cat">PERFORMANCE</span><span class="ttl">타워 증발산 재현</span><span class="desc">식생별 RMSE, 계절 순환, 격자 자료·물수지 비교</span><span class="tags"><span class="tag">10장</span></span></button>
     <button class="card" data-go="xai"><div class="ph"><img src="fig/xh.jpg" alt="식생군별 SHAP 히트맵"></div><span class="cat">XAI</span><span class="ttl">ML은 무엇에 기대나</span><span class="desc">SHAP, 순열, ablation, ALE</span><span class="tags"><span class="tag">6장</span></span></button>
     <button class="card" data-go="cond"><div class="ph"><img src="fig/ar1.jpg" alt="건조도별 성능"></div><span class="cat">ARIDITY</span><span class="ttl">건조도에 따른 성능</span><span class="desc">건조도별 오차 감소, 계절 순환, 토양수분·VPD 반응</span><span class="tags"><span class="tag">8장</span></span></button>
-    <button class="card" data-go="lumip"><div class="ph"><img src="fig/lda.jpg" alt="CO2·기후 실험"></div><span class="cat">CO₂ &amp; CLIMATE</span><span class="ttl">CO₂·기후 변화 실험</span><span class="desc">평균 ET 변화 비교, GPP·VPD별 실험 차이</span><span class="tags"><span class="tag">2장</span></span></button>
+    <button class="card" data-go="lumip"><div class="ph"><img src="fig/ld14.jpg" alt="CO2·기후 실험"></div><span class="cat">CO₂ &amp; CLIMATE</span><span class="ttl">CO₂·기후 변화 실험</span><span class="desc">평균 ET 변화 비교, GPP·VPD별 실험 차이</span><span class="tags"><span class="tag">1장</span></span></button>
     <button class="card" data-go="ref"><div class="ph cover-txt"><span>Collier 2018<br>Denissen 2022<br>Eyring 2024<br>Lawrence 2016, 2019<br>Nelson 2024<br>Seneviratne 2010<br>Tramontana 2016</span></div><span class="cat">REFERENCES</span><span class="ttl">참고문헌</span><span class="desc">본문과 그림에 인용한 문헌</span><span class="tags"><span class="tag">8편</span></span></button>
   </div>
 </section>
@@ -162,7 +162,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <tr><th>CESM2-trained ML</th><td>같은 구조·같은 입력으로 CESM2 ET를 학습한 비교 기준 (수지 항 없음). 교차검증 R² 0.94, RMSE 0.30 mm day⁻¹.</td></tr>
   </tbody></table></div>
   <h3>대기 수분수지 목표</h3>
-  <p class="note">수렴 = ERA5 월평균 연직 적분 수증기 발산의 부호 반전. 가강수량 변화 = (다음 달 1일 − 이번 달 1일 00 UTC 가강수량 tcwv) ÷ 그 달 일수. b = GPCC 강수 − (수렴 − 가강수량 변화). 0.25°·0.5° 값은 CESM2 격자 상자 안에서 면적(cos 위도) 가중 평균. 손실은 수지 자료가 2개 연도 이상 있는 사이트×달력월 평균끼리 비교한다.</p>
+  <p class="note">대기 기둥 수증기 보존식 ∂W/∂t = E − P − ∇·Q 에서 수렴 C = −∇·Q(ERA5 월평균 연직 적분 수증기 발산의 음수)로 두면 수지 ET b = P − C + ΔW/Δt. P = GPCC 강수, ΔW = (다음 달 1일 − 이번 달 1일 00 UTC 가강수량 tcwv), Δt = 그 달 일수. 0.25°·0.5° 값은 CESM2 격자 상자 안에서 면적(cos 위도) 가중 평균. 손실은 수지 자료가 2개 연도 이상 있는 사이트×달력월 평균끼리 비교한다.</p>
   <h3>공간 통일</h3>
   <p class="note">격자 비교: GLEAM(0.1°)은 보존적 재격자화, X-BASE(0.5°)·ERA5(0.25°)·FLUXCOM은 CESM2 격자 상자 면적 가중 평균. 타워 비교: 각 자료의 원 격자에서 타워 좌표의 최근접 격자점, ML·CESM2는 타워가 속한 CESM2 격자.</p>
   <h3>평가</h3>
@@ -200,9 +200,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 </section>
 
 <section id="cond" data-sec hidden>
-  <div class="pagehead"><span class="eyebrow">Aridity</span><h2>건조도에 따른 성능</h2><p>타워 관측 강수와 Priestley–Taylor PET로 계산한 건조도(P/PET &lt; 0.65 건조, 0.65–1 반습윤, ≥ 1 습윤)별 비교.</p></div>
+  <div class="pagehead"><span class="eyebrow">Aridity</span><h2>건조도별 개선과 학습 관계 비교</h2><p>타워 관측 강수와 Priestley–Taylor PET로 계산한 건조도(P/PET &lt; 0.65 건조, 0.65–1 반습윤, ≥ 1 습윤)별 비교.</p></div>
   <div class="summary"><p><strong>세 건조도 군에서 ML의 평균 오차가 CESM2보다 작았습니다.</strong><br><span class="rest">건조 지역에서는 계절 순환 성분의 개선이 가장 컸고, 개선 폭은 건조도 자체보다 식생 유형에 따라 더 크게 달랐습니다.</span></p></div>
   <figure><div class="ph"><img src="fig/ar1.jpg" alt="건조도별 오차 감소"></div><figcaption><b>건조도별 오차 감소</b><span class="cap">타워 기준 건조도(P/PET)로 나눈 세 군에서 CESM2 대비 ML의 RMSE 감소를 성분별로(왼쪽, 오차막대 = 시드 범위), 사이트별 감소를 상자그림으로(오른쪽) 보인다.</span><span class="cap">세 건조도 군 모두에서 ML이 오차를 줄였고, 건조 지역에서는 계절 순환 성분의 개선이 가장 컸다. 사이트별로도 각 군의 61–76%가 개선됐다.</span></figcaption></figure>
+  <figure class="stack"><div class="ph"><img src="fig/tf1.jpg" alt="같은 입력에서 두 학습 함수의 반응 비교"></div><figcaption><b>관측·CESM2 학습 관계 비교</b><span class="plain">같은 CESM2 입력을 타워 ET로 학습한 ML(주황)과 CESM2 ET로 학습한 ML(파랑)에 넣었을 때 각 변수의 기여(SHAP). (a) 기여 크기: CESM2 학습 관계는 GPP에, 관측 학습 관계는 장파·기온·단파 쪽 기여가 더 크다. (b)–(e) 변수 구간별 SHAP: GPP에 대한 반응은 CESM2 학습 관계에서 훨씬 가파르고, 장파에 대한 반응은 두 관계가 비슷하다.</span><span class="cap">329곳 × 월, 시드 44. 선 = 기후값 10분위별 SHAP 중앙값, 음영 = 25–75% 분포. 정답 ET의 GPP 결합 차이가 반영될 수 있어 실제 반응 법칙의 차이로 단정하지 않는다.</span></figcaption></figure>
   <figure><div class="ph"><img src="fig/ar2.jpg" alt="건조도별 성분 성능과 사이트 분포"></div><figcaption><b>건조도별 성분 성능과 사이트 분포</b><span class="cap">같은 비교를 사이트 간 분포 범위와 함께 표시했다.</span><span class="cap">세 군의 평균 감소는 양수였고, 사이트 간 편차는 건조 지역에서 컸다.</span></figcaption></figure>
   <figure><div class="ph"><img src="fig/ar3.jpg" alt="건조도별 사이트 분포"></div><figcaption><b>건조도별 사이트 분포</b><span class="cap">사이트별 RMSE 감소의 분포.</span><span class="cap">개선된 사이트가 각 군에서 다수다.</span></figcaption></figure>
   <figure><div class="ph"><img src="fig/ar4.jpg" alt="건조도 × 식생 유형"></div><figcaption><b>건조도 × 식생 유형</b><span class="cap">CESM2 기준 건조도와 식생 유형의 조합별 사이트 MAE 감소(보라 = ML 우세, 빗금 = 사이트 재표집 구간이 0 포함).</span><span class="cap">건조한 농경지·습지에서 ML의 개선이 가장 크고, 습윤 지역에서는 대부분 작다.</span></figcaption></figure>
@@ -214,9 +215,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <section id="lumip" data-sec hidden>
   <div class="pagehead"><span class="eyebrow">CO₂ &amp; Climate</span><h2>CO₂·기후 변화 실험에서의 ET 반응</h2><p>LUMIP 1992–2014년 실험 대비: hist − cCO2(CO₂를 1850년 수준에 고정), hist − cClim(기후를 1850년대에 고정). 실험마다 따로 학습한 CESM2-trained ML을 사용.</p></div>
-  <div class="summary"><p><strong>실험별로 학습한 ML과 CESM2의 평균 ET 변화는 CO₂·기후 비교 모두에서 가깝습니다.</strong><br><span class="rest">같은 입력에서 CO₂ 실험 함수의 음의 ET 차이는 광합성이 활발하고 대기가 건조할수록 커지고, 기후 실험 함수의 차이는 작습니다.</span></p></div>
-  <figure class="stack"><div class="ph"><img src="fig/lda.jpg" alt="CO2·기후 실험 ET 변화"></div><figcaption><b>(a)(b) 실험별 학습 ML과 CESM2의 평균 ET 변화</b><span class="plain">검정 = CESM2 실제 ET 변화, 진회색 = 실험별로 학습한 ML의 총변화. 평균 변화는 CO₂ 비교에서 ML −0.0034, CESM2 −0.0026, 기후 비교에서 ML +0.0348, CESM2 +0.0353 mm day⁻¹로 가깝고, 사이트별 상관은 두 비교 모두 0.78이다. 파랑 두 막대는 총변화를 입력만 바꾼 몫(입력 항)과 같은 입력에서 함수만 바꾼 몫(관계 항)으로 나눈 것이다.</span><span class="cap">공간 교차검증 시험 사이트, 시드 5개 평균, 오차막대 = 시드 범위(신뢰구간 아님).</span></figcaption></figure>
-  <figure class="stack"><div class="ph"><img src="fig/ldb.jpg" alt="GPP·VPD에 따른 두 실험 함수의 ET 차"></div><figcaption><b>(c)(d) GPP·VPD에 따른 두 실험의 차이</b><span class="plain">같은 입력을 두 실험의 학습 함수에 넣었을 때의 ET 차이. CO₂(파랑)의 음의 차이는 광합성(GPP)과 대기 건조도(VPD)가 클수록 커지고, 기후(빨강)는 작다. 이 차이가 CLM5의 CO₂–기공 전도도 반응에서 오는지는 후속 진단 과제로 남는다. 회색 점선 = 학습 잡음 크기.</span><span class="cap">hist GPP·VPD 10분위 평균(ALE 아님), 홀수 해 학습 함수(학습량 동일), 음영 = 시드 범위, 회색 배경 = GPP 0.5 미만 해석 유보. 기공 반응은 방향이 부합한다는 해석이며 기전을 직접 식별한 것은 아니다.</span></figcaption></figure>
+  <div class="summary"><p><strong>같은 입력에서 CO₂ 실험 함수의 음의 ET 차이는 GPP와 VPD가 클수록 커졌습니다.</strong><br><span class="rest">같은 입력에서 CO₂ 실험 함수의 음의 ET 차이는 광합성이 활발하고 대기가 건조할수록 커지고, 기후 실험 함수의 차이는 작습니다.</span></p></div>
+  <figure class="stack"><div class="ph"><img src="fig/ld14.jpg" alt="CO2·기후 실험별 학습 함수 비교"></div><figcaption><b>CO₂·기후 변화 실험에서의 ET 반응</b><span class="plain">(a) 실험마다 따로 학습한 ML의 평균 ET 변화(hist − 실험)는 CESM2와 가깝다(CO₂ −0.0034 대 −0.0026, 기후 +0.0348 대 +0.0353 mm day⁻¹). (b)(c) 같은 입력을 두 실험의 학습 함수에 넣었을 때의 ET 차: CO₂(파랑)의 음의 차이는 GPP와 VPD가 클수록 커지고, 기후(빨강)는 작다. 회색 점선은 같은 hist 자료를 홀수·짝수 해로 나눠 학습한 두 함수의 차로, 학습만으로 생기는 차이의 크기다.</span><span class="cap">(a) 공간 교차검증 시험 사이트, 시드 5개 범위. (b)(c) 10분위 평균, 홀수 해 학습 함수, 회색 배경 = GPP 0.5 미만 해석 유보. 후속 과제: 이 차이가 CLM5의 CO₂–기공 전도도 반응에서 오는지는 기공 전도도·증산 성분 진단으로 검토할 수 있다.</span></figcaption></figure>
 </section>
 
 <section id="disc" data-sec hidden>
